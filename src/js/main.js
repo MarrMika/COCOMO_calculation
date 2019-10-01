@@ -71,10 +71,6 @@ function calcEAF(){
 	result *= parseFloat(handleRadioBtn('42'));
 	result *= parseFloat(handleRadioBtn('43'));
 
-	result *= parseFloat(handleRadioBtn('51'));
-	result *= parseFloat(handleRadioBtn('52'));
-	result *= parseFloat(handleRadioBtn('53'));
-	result *= parseFloat(handleRadioBtn('54'));
 	return result;
 }
 
