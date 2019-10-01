@@ -23,7 +23,7 @@ function calculate(){
 			handleProjectType();
 			EAF = calcEAF();
 			PM = EAF * Ai * Math.pow(SIZE,Bi);
-			document.getElementById('formula').innerHTML = PM;
+			document.getElementById('formula').innerHTML = " = " + PM;
 		}
 }
 
