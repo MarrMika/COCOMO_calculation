@@ -1,0 +1,51 @@
+table{
+	border: 1px;
+	width: 100%;
+	}
+
+div{
+	background: white;
+	opacity: 50%;
+	}
+body{
+	background: grey;
+	opacity: 80%
+	}
+
+hr {
+    border: none; 
+    background-color: red; 
+    color: red; 
+    height: 2px; 
+   }
+
+#point{
+	font-style: italic;
+	background: purple;
+	color: white;
+}
+
+#formula{
+  color: #003153 ; 
+  font-size: 32px;
+  margin-left: 300px;
+}
+
+#nullLOC{
+  color: red;
+  margin-left: 1px;
+  position: fixed;
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  margin-left: 300px;
+  margin-right: 10px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
