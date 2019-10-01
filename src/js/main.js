@@ -1,10 +1,11 @@
-let arr =   [[3.2, 1.05],  
-		  [3.0, 1.12],  
-		  [2.8, 1.20]   
-		 ];
+let arr = [  [3.2, 1.05],  
+		     [3.0, 1.12],  
+		     [2.8, 1.20]   
+		  ];
 
-let Ai,Bi=0,
-SIZE = 0,
+let Ai,
+Bi,
+SIZE,
 PM,
 EAF;
 
@@ -26,7 +27,7 @@ function calculate(){
 function handleProjectType(){
 	var selectedAns;
 	var values = document.getElementsByName('type');
-	for (var i =0; i < values.length; i++) {
+	for (var i = 0; i < values.length; i++) {
 		if ((values[i].checked)) {
 			selectedAns = parseInt(values[i].value);
 		}
