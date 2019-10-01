@@ -1,17 +1,12 @@
-let arr =[[3.2, 1.05],  //00,,01
-		  [3.0, 1.12],  //10,,11
-		  [2.8, 1.20]   //20,,21
+let arr =[[3.2, 1.05],  
+		  [3.0, 1.12],  
+		  [2.8, 1.20]   
 		 ];
 
 let Ai,Bi=0,
 SIZE = 0,
 PM,
 EAF;
-
-
-//PM = EAF*Ai*Math.pow((SIZE),Bi);
-
-
 
 
 function calculate(){
