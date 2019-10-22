@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width. initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>COCOMO Calculation</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <script src="js/main.js"></script>
+
+	<div class="container">
+		<h2 align="center">COCOMO_ІІ Calculation</h2>
+		<table border="1" width="100%" cellpadding="10">
+			<tr>
+				<td>
+					<p><b>Choose type of your estimation:</b></p>
+				
+					
+					<form >
+					<input type="radio"  name="typeEst" value="0" onclick="handleTypeEstimation()" > Previous estimation<br>
+					<input type="radio"  name="typeEst" value="1" onclick="handleTypeEstimation()"> Detail estimation<br>
+					</form>
+
+					<p><b>Kilo of Source Line of Code:</b></p>
+					<span id="nullLOC"></span>
+					<input type="text" id="LOC">
+					<button class="button" onclick="calculateCocomoTwo()">Calculate</button><br>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				
+						<b> Acronyms used below:</b>
+						<span id = "result">PM = EAF*A*(SIZE)^E</span><span id="formula" ></span>
+						<br>
+							  <b>VL</b> = Very Low;
+							  <b> L</b> = Low;
+							  <b> N </b>= Nominal;
+							  <b>H </b>= High;
+							  <b>VH </b>= Very High;
+							  <b>XH </b>= eXtra High;<br>	 
+				 
+				    	       <b>Е=В+0,01×∑(j=1,5)SFj;</b><br>
+				    	       <b>EAF=∏(j=1,n)EMj</b> ( (Effort Adjustment Factor) – добуток обраних множників трудомісткості);<br>
+				    	       <b>SFj</b> = фактори (чинники) масштабу (Scale Factors);<br>
+				    	       <b>B = 0.91, A = 2.94</b> для попередньої оцінки;<br>
+				    	       <b>A = 2.45</b> для детальної оцінки;<br>
+				    	       <b>SIZE = KLOC;</b><br>
+				    	       <b>EMj</b> = множники трудомісткості (Effort Multipliers), <b>n=7</b> – для попередньої оцінки , <b>n=17</b> – для детальної оцінки;
+
+				</td>
+			</tr>
+			<tr>
+				<td >
+					<b>Scale Factors</b><br>
+					<hr>
+					<input type="radio" name="11" value="6.20"><b>VL</b>
+					<input type="radio" name="11" value="4.96"><b>L</b> 
+					<input type="radio" name="11" value="3.72" checked><b>N</b>
+					<input type="radio" name="11" value="2.48"><b>H</b>
+					<input type="radio" name="11" value="1.24"><b>VH</b>
+					<input type="radio" name="11" value="0.00"><b>XH :</b>
+					<span  id="point" ><b>PREC</b></span><br>
+
+					<input type="radio" name="12" value="5.07"><b>VL</b>
+					<input type="radio" name="12" value="4.05"><b>L</b> 
+					<input type="radio" name="12" value="3.04" checked><b>N</b>
+					<input type="radio" name="12" value="2.03"><b>H</b>
+					<input type="radio" name="12" value="1.01"><b>VH</b>
+					<input type="radio" name="12" value="0.00"><b>XH :</b>
+					<span  id="point" ><b>FLEX</b></span><br>
+
+					<input type="radio" name="13" value="7.07"><b>VL</b>
+					<input type="radio" name="13" value="5.65"><b>L</b> 
+					<input type="radio" name="13" value="4.24" checked><b>N</b>
+					<input type="radio" name="13" value="2.83"><b>H</b>
+					<input type="radio" name="13" value="1.41"><b>VH</b>
+					<input type="radio" name="13" value="0.00"><b>XH :</b>
+					<span  id="point" ><b>RESL</b></span><br>
+
+					<input type="radio" name="14" value="5.48"><b>VL</b>
+					<input type="radio" name="14" value="4.38"><b>L</b> 
+					<input type="radio" name="14" value="3.29" checked><b>N</b>
+					<input type="radio" name="14" value="2.19"><b>H</b>
+					<input type="radio" name="14" value="1.10"><b>VH</b>
+					<input type="radio" name="14" value="0.00"><b>XH :</b>
+					<span  id="point" ><b>TEAM</b></span><br>
+
+					<input type="radio" name="15" value="7.80"><b>VL</b>
+					<input type="radio" name="15" value="6.24"><b>L</b> 
+					<input type="radio" name="15" value="4.68" checked><b>N</b>
+					<input type="radio" name="15" value="3.12"><b>H</b>
+					<input type="radio" name="15" value="1.56"><b>VH</b>
+					<input type="radio" name="15" value="0.00"><b>XH :</b>
+					<span  id="point" ><b>PMAT</b></span><br>
+				</td>
+			</tr>
+			<tr id="early_design">
+				<td >
+					<b>Early Design</b><br>
+					<hr>
+					<input type="radio" name="21" value="2.12"><b>XL</b>
+					<input type="radio" name="21" value="1.62"><b>VL</b>
+					<input type="radio" name="21" value="1.26"><b>L</b> 
+					<input type="radio" name="21" value="1.00" checked><b>N</b>
+					<input type="radio" name="21" value="0.83"><b>H</b>
+					<input type="radio" name="21" value="0.63"><b>VH</b>
+					<input type="radio" name="21" value="0.50"><b>XH :</b>
+					<span  id="point" ><b>PERS</b></span><br>
+
+					<input type="radio" name="22" value="1.59"><b>XL</b>
+					<input type="radio" name="22" value="1.33"><b>VL</b>
+					<input type="radio" name="22" value="1.22"><b>L</b> 
+					<input type="radio" name="22" value="1.00" checked><b>N</b>
+					<input type="radio" name="22" value="0.87"><b>H</b>
+					<input type="radio" name="22" value="0.74"><b>VH</b>
+					<input type="radio" name="22" value="0.62"><b>XH :</b>
+					<span  id="point" ><b>FREX</b></span><br>
+
+					<input type="radio" name="23" value="0.49"><b>XL</b>
+					<input type="radio" name="23" value="0.60"><b>VL</b>
+					<input type="radio" name="23" value="0.83"><b>L</b> 
+					<input type="radio" name="23" value="1.00" checked><b>N</b>
+					<input type="radio" name="23" value="1.33"><b>H</b>
+					<input type="radio" name="23" value="1.91"><b>VH</b>
+					<input type="radio" name="23" value="2.72"><b>XH :</b>
+					<span  id="point" ><b>RCPX</b></span><br>
+
+					<input type="radio" name="24" value="1.00"><b>XL</b>
+					<input type="radio" name="24" value="1.00"><b>VL</b>
+					<input type="radio" name="24" value="0.95"><b>L</b> 
+					<input type="radio" name="24" value="1.00" checked><b>N</b>
+					<input type="radio" name="24" value="1.07"><b>H</b>
+					<input type="radio" name="24" value="1.15"><b>VH</b>
+					<input type="radio" name="24" value="1.24"><b>XH :</b>
+					<span  id="point" ><b>PUSE</b></span><br>
+
+					<input type="radio" name="25" value="1.00"><b>XL</b>
+					<input type="radio" name="25" value="1.00"><b>VL</b>
+					<input type="radio" name="25" value="0.87"><b>L</b> 
+					<input type="radio" name="25" value="1.00" checked><b>N</b>
+					<input type="radio" name="25" value="1.29"><b>H</b>
+					<input type="radio" name="25" value="1.81"><b>VH</b>
+					<input type="radio" name="25" value="2.61"><b>XH :</b>
+					<span  id="point" ><b>PDIF</b></span><br>
+
+					<input type="radio" name="26" value="1.43"><b>XL</b>
+					<input type="radio" name="26" value="1.30"><b>VL</b>
+					<input type="radio" name="26" value="1.10"><b>L</b> 
+					<input type="radio" name="26" value="1.00" checked><b>N</b>
+					<input type="radio" name="26" value="0.87"><b>H</b>
+					<input type="radio" name="26" value="0.73"><b>VH</b>
+					<input type="radio" name="26" value="0.62"><b>XH :</b>
+					<span  id="point" ><b>FCIL></b></span><br>
+
+					<input type="radio" name="27" value="1.00"><b>XL</b>
+					<input type="radio" name="27" value="1.43"><b>VL</b>
+					<input type="radio" name="27" value="1.14"><b>L</b> 
+					<input type="radio" name="27" value="1.00" checked><b>N</b>
+					<input type="radio" name="27" value="1.00"><b>H</b>
+					<input type="radio" name="27" value="1.00"><b>VH</b>
+					<input type="radio" name="27" value="1.00"><b>XH :</b>
+					<span  id="point" ><b>SCED></b></span><br>
+				</td>
+			</tr>
+			<table id="post_architecture">
+				<tr>
+				<td >
+
+					<b>Personal Factors</b><br>
+					<hr>
+					<input type="radio" name="31" value="1.42"><b>VL</b>
+					<input type="radio" name="31" value="1.29"><b>L</b> 
+					<input type="radio" name="31" value="1.00" checked><b>N</b>
+					<input type="radio" name="31" value="0.85"><b>H</b>
+					<input type="radio" name="31" value="0.71"><b>VH</b>
+					<input type="radio" name="31" value="1.00"><b>XH :</b>
+					<span  id="point" ><b>ACAP</b></span><br>
+
+					<input type="radio" name="32" value="1.22"><b>VL</b>
+					<input type="radio" name="32" value="1.10"><b>L</b> 
+					<input type="radio" name="32" value="1.00" checked><b>N</b>
+					<input type="radio" name="32" value="0.88"><b>H</b>
+					<input type="radio" name="32" value="0.81"><b>VH</b>
+					<input type="radio" name="32" value="1.00"><b>XH :</b>
+					<span  id="point" ><b>AEXP</b></span><br>
+
+					<input type="radio" name="33" value="1.34"><b>VL</b>
+					<input type="radio" name="33" value="1.15"><b>L</b> 
+					<input type="radio" name="33" value="1.00" checked><b>N</b>
+					<input type="radio" name="33" value="0.88"><b>H</b>
+					<input type="radio" name="33" value="0.76"><b>VH</b>
+					<input type="radio" name="33" value="1.00"><b>XH :</b>
+					<span  id="point" ><b>PCAP</b></span><br>
+
+					<input type="radio" name="34" value="1.29"><b>VL</b>
+					<input type="radio" name="34" value="1.12"><b>L</b> 
+					<input type="radio" name="34" value="1.00" checked><b>N</b>
+					<input type="radio" name="34" value="0.90"><b>H</b>
+					<input type="radio" name="34" value="0.81"><b>VH</b>
+					<input type="radio" name="34" value="1.00"><b>XH :</b>
+					<span  id="point" ><b>PCON</b></span><br>
+
+					<input type="radio" name="35" value="1.19"><b>VL</b>
+					<input type="radio" name="35" value="1.09"><b>L</b> 
+					<input type="radio" name="35" value="1.00" checked><b>N</b>
+					<input type="radio" name="35" value="0.91"><b>H</b>
+					<input type="radio" name="35" value="0.85"><b>VH</b>
+					<input type="radio" name="35" value="1.00"><b>XH :</b>
+					<span  id="point" ><b>PEXP</b></span><br>
+
+					<input type="radio" name="36" value="1.19"><b>VL</b>
+					<input type="radio" name="36" value="1.09"><b>L</b> 
+					<input type="radio" name="36" value="1.00" checked><b>N</b>
+					<input type="radio" name="36" value="0.91"><b>H</b>
+					<input type="radio" name="36" value="0.85"><b>VH</b>
+					<input type="radio" name="36" value="1.00"><b>XH :</b>
+					<span  id="point" ><b>LTEX</b></span><br>
+				</td>
+			</tr>
+			<tr>
+				<td >
+					<b>Product Factors</b><br>
+					<hr>
+					<input type="radio" name="41" value="0.84"><b>VL</b>
+					<input type="radio" name="41" value="0.92"><b>L</b> 
+					<input type="radio" name="41" value="1.00" checked><b>N</b>
+					<input type="radio" name="41" value="1.10"><b>H</b>
+					<input type="radio" name="41" value="1.26"><b>VH</b>
+					<input type="radio" name="41" value="1.00"><b>XH :</b>
+					<span  id="point" ><b>RELY</b></span><br>
+
+					<input type="radio" name="42" value="1.00"><b>VL</b>
+					<input type="radio" name="42" value="0.23"><b>L</b> 
+					<input type="radio" name="42" value="1.00" checked><b>N</b>
+					<input type="radio" name="42" value="1.14"><b>H</b>
+					<input type="radio" name="42" value="1.28"><b>VH</b>
+					<input type="radio" name="42" value="1.00"><b>XH :</b>
+					<span  id="point" ><b>DATA</b></span><br>
+
+					<input type="radio" name="43" value="0.73"><b>VL</b>
+					<input type="radio" name="43" value="0.87"><b>L</b> 
+					<input type="radio" name="43" value="1.00" checked><b>N</b>
+					<input type="radio" name="43" value="1.17"><b>H</b>
+					<input type="radio" name="43" value="1.34"><b>VH</b>
+					<input type="radio" name="43" value="1.74"><b>XH :</b>
+					<span  id="point" ><b>CPLX</b></span><br>
+
+					<input type="radio" name="44" value="1.00"><b>VL</b>
+					<input type="radio" name="44" value="0.95"><b>L</b> 
+					<input type="radio" name="44" value="1.00" checked><b>N</b>
+					<input type="radio" name="44" value="1.07"><b>H</b>
+					<input type="radio" name="44" value="1.15"><b>VH</b>
+					<input type="radio" name="44" value="1.24"><b>XH :</b>
+					<span  id="point" ><b>RUSE</b></span><br>
+
+					<input type="radio" name="45" value="0.81"><b>VL</b>
+					<input type="radio" name="45" value="0.91"><b>L</b> 
+					<input type="radio" name="45" value="1.00" checked><b>N</b>
+					<input type="radio" name="45" value="1.11"><b>H</b>
+					<input type="radio" name="45" value="1.23"><b>VH</b>
+					<input type="radio" name="45" value="1.00"><b>XH :</b>
+					<span  id="point" ><b>DOCU</b></span><br>
+				</td>
+			</tr>
+			<tr>
+				<td >
+					<b>Platform Factors</b><br>
+					<hr>
+					<input type="radio" name="51" value="1.00"><b>VL</b>
+					<input type="radio" name="51" value="1.00"><b>L</b> 
+					<input type="radio" name="51" value="1.00" checked><b>N</b>
+					<input type="radio" name="51" value="1.11"><b>H</b>
+					<input type="radio" name="51" value="1.29"><b>VH</b>
+					<input type="radio" name="51" value="1.63"><b>XH :</b>
+					<span  id="point" ><b>TIME</b></span><br>
+
+					<input type="radio" name="52" value="1.00"><b>VL</b>
+					<input type="radio" name="52" value="1.00"><b>L</b> 
+					<input type="radio" name="52" value="1.00" checked><b>N</b>
+					<input type="radio" name="52" value="1.05"><b>H</b>
+					<input type="radio" name="52" value="1.17"><b>VH</b>
+					<input type="radio" name="52" value="1.46"><b>XH :</b>
+					<span  id="point" ><b>STOR</b></span><br>
+
+					<input type="radio" name="53" value="1.00"><b>VL</b>
+					<input type="radio" name="53" value="0.87"><b>L</b> 
+					<input type="radio" name="53" value="1.00" checked><b>N</b>
+					<input type="radio" name="53" value="1.15"><b>H</b>
+					<input type="radio" name="53" value="1.30"><b>VH</b>
+					<input type="radio" name="53" value="1.00"><b>XH :</b>
+					<span  id="point" ><b>PVOL</b></span><br>
+				</td>
+			</tr>
+			<tr>
+				<td >
+					<b>Project Factors</b><br>
+					<hr>
+					<input type="radio" name="61" value="1.17"><b>VL</b>
+					<input type="radio" name="61" value="1.09"><b>L</b> 
+					<input type="radio" name="61" value="1.00" checked><b>N</b>
+					<input type="radio" name="61" value="0.93"><b>H</b>
+					<input type="radio" name="61" value="0.86"><b>VH</b>
+					<input type="radio" name="61" value="0.80"><b>XH :</b>
+					<span  id="point" ><b>TOOL</b></span><br>
+
+					<input type="radio" name="62" value="1.22"><b>VL</b>
+					<input type="radio" name="62" value="1.09"><b>L</b> 
+					<input type="radio" name="62" value="1.00" checked><b>N</b>
+					<input type="radio" name="62" value="0.93"><b>H</b>
+					<input type="radio" name="62" value="0.86"><b>VH</b>
+					<input type="radio" name="62" value="0.80"><b>XH :</b>
+					<span  id="point" ><b>SITE</b></span><br>
+
+					<input type="radio" name="63" value="1.43"><b>VL</b>
+					<input type="radio" name="63" value="1.14"><b>L</b> 
+					<input type="radio" name="63" value="1.00" checked><b>N</b>
+					<input type="radio" name="63" value="1.00"><b>H</b>
+					<input type="radio" name="63" value="1.00"><b>VH</b>
+					<input type="radio" name="63" value="1.00"><b>XH :</b>
+					<span  id="point" ><b>SCED</b></span><br>
+					
+				</td>
+			</tr>
+			</table>
+		</table>
+		
+	</div>
+</body>
+</html>

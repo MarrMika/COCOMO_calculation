@@ -43,14 +43,50 @@ hr {
 }
 
 .button {
-  background-color: #4CAF50; /* Green */
-  border: none;
+  background-color: green; 
+  border: 1px black;
   color: white;
-  margin-left: 1100px;
+  margin-left: 1050px;
   margin-right: 10px;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 34px;
+}
+
+a {
+  background-color: purple; 
+  border: 1px black;
+  color: white;
+  margin-left: 600px;
+  margin-right: 10px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 34px;
+  width: 200px;
+}
+
+
+
+
+//cocomo2
+#index_body{
+  margin-top:300px;
+  background: grey;
+}
+
+#div_td{
+ display: inline;
+ margin-top: 20px;
+}
+
+#early_design{
+  display: none;
+}
+
+#post_architecture{
+  display: none;
 }
