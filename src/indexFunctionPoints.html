@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width. initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Functional Points</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <script src="js/main.js"></script>
+
+	<div class="container">
+		<h2 align="center">Functinal Points</h2>
+		<table border="1" width="100%" cellpadding="10">
+			<tr>
+				<td>
+					<p><b>Choose type of your project:</b></p>
+					<input type="radio" name="type" value="0" checked><b>Organic Mode:</b> Relatively small. simple software projects in which small teams with good application experience work to a set of less than rigid requirements.<br>
+					<input type="radio" name="type" value="1"><b>Semi-detached Mode:</b> An intermediate. (in size and complexity). software project in which teams with mixed experience levels must meet a mix of rigid and less than rigid requirements.<br>
+					<input type="radio" name="type" value="2"><b>Embedded Mode:</b> A software project that must be developed within a set of tight hardware. software and operation constraints.
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span id="warning" ></span>
+					<p><b>Зовнішні вводи (введення даних користувачів):</b></p>
+					<hr>
+					<table border="1" width="100%" cellpadding="10">
+						<tr>
+							<td>
+								Посилання на файли
+							</td>
+							<td>
+								1-4
+							</td>
+							<td>
+								5-15
+							</td>
+							<td>
+								>15
+							</td>
+						</tr>
+						<tr>
+							<td>
+								0-1
+							</td>
+							<td>
+								<input type="radio" name="111" value="6"><b>Низький</b>
+							</td>
+							<td>
+								<input type="radio" name="111" value="24"><b>Низький</b> 
+					
+							</td>
+							<td>
+								<input type="radio" name="111" value="60" checked><b>Середній</b>	
+							</td>
+						</tr>
+						<tr>
+							<td>
+								2
+							</td>
+							<td>
+								<input type="radio" name="111" value="6"><b>Низький</b>
+							</td>
+							<td>
+								<input type="radio" name="111" value="24"><b>Середній</b> 
+					
+							</td>
+							<td>
+								<input type="radio" name="111" value="90" checked><b>Високий</b>	
+							</td>
+						</tr>
+						<tr>
+							<td>
+								>2
+							</td>
+							<td>
+								<input type="radio" name="111" value="8"><b>Середній</b>
+							</td>
+							<td>
+								<input type="radio" name="111" value="48"><b>Високий</b> 
+					
+							</td>
+							<td>
+								<input type="radio" name="111" value="90" checked><b>Високий</b>	
+							</td>
+						</tr>
+					</table>
+
+					<p><b>	Зовнішні виводи (звіти, екрани, роздрукування, повідомлення):</b></p>
+					<hr>
+					<table border="1" width="100%" cellpadding="10">
+						<tr>
+							<td>
+								Посилання на файли
+							</td>
+							<td>
+								1-4
+							</td>
+							<td>
+								5-19
+							</td>
+							<td>
+								>19
+							</td>
+						</tr>
+						<tr>
+							<td>
+								0-1
+							</td>
+							<td>
+								<input type="radio" name="211" value="8"><b>Низький</b>
+							</td>
+							<td>
+								<input type="radio" name="211" value="40"><b>Низький</b> 
+					
+							</td>
+							<td>
+								<input type="radio" name="211" value="100" checked><b>Середній</b>	
+							</td>
+						</tr>
+						<tr>
+							<td>
+								2-3
+							</td>
+							<td>
+								<input type="radio" name="211" value="8"><b>Низький</b>
+							</td>
+							<td>
+								<input type="radio" name="211" value="50"><b>Середній</b> 
+					
+							</td>
+							<td>
+								<input type="radio" name="211" value="140" checked><b>Високий</b>	
+							</td>
+						</tr>
+						<tr>
+							<td>
+								>3
+							</td>
+							<td>
+								<input type="radio" name="211" value="10"><b>Середній</b>
+							</td>
+							<td>
+								<input type="radio" name="211" value="70"><b>Високий</b> 
+					
+							</td>
+							<td>
+								<input type="radio" name="211" value="140" checked><b>Високий</b>	
+							</td>
+						</tr>
+						
+					</table>
+					<p><b>	Зовнішні запити (діалогові вводи-виводи):</b></p>
+					<hr>
+					<table border="1" width="100%" cellpadding="10">
+						<tr>
+							<td>
+								Посилання на файли
+							</td>
+							<td>
+								1-4
+							</td>
+							<td>
+								5-19
+							</td>
+							<td>
+								>19
+							</td>
+						</tr>
+						<tr>
+							<td>
+								0-1
+							</td>
+							<td>
+								<input type="radio" name="311" value="6"><b>Низький</b>
+							</td>
+							<td>
+								<input type="radio" name="311" value="30"><b>Низький</b> 
+					
+							</td>
+							<td>
+								<input type="radio" name="311" value="80" checked><b>Середній</b>	
+							</td>
+						</tr>
+						<tr>
+							<td>
+								2-3
+							</td>
+							<td>
+								<input type="radio" name="311" value="6"><b>Низький</b>
+							</td>
+							<td>
+								<input type="radio" name="311" value="40"><b>Середній</b> 
+					
+							</td>
+							<td>
+								<input type="radio" name="311" value="120" checked><b>Високий</b>	
+							</td>
+						</tr>
+						<tr>
+							<td>
+								>3
+							</td>
+							<td>
+								<input type="radio" name="311" value="8"><b>Середній</b>
+							</td>
+							<td>
+								<input type="radio" name="311" value="60"><b>Високий</b> 
+					
+							</td>
+							<td>
+								<input type="radio" name="311" value="120" checked><b>Високий</b>	
+							</td>
+						</tr>
+						
+					</table>
+					<p><b>Локальні внутрішні логічні файли (звернення до текстових файлів):</b></p>
+					<hr>
+					<table border="1" width="100%" cellpadding="10">
+						<tr>
+							<td>
+								Посилання на файли
+							</td>
+							<td>
+								1-19
+							</td>
+							<td>
+								20-50
+							</td>
+							<td>
+								>50
+							</td>
+						</tr>
+						<tr>
+							<td>
+								1
+							</td>
+							<td>
+								<input type="radio" name="411" value="70"><b>Низький</b>
+							</td>
+							<td>
+								<input type="radio" name="411" value="175"><b>Низький</b> 
+					
+							</td>
+							<td>
+								<input type="radio" name="411" value="500" checked><b>Середній</b>	
+							</td>
+						</tr>
+						<tr>
+							<td>
+								2-5
+							</td>
+							<td>
+								<input type="radio" name="411" value="70"><b>Низький</b>
+							</td>
+							<td>
+								<input type="radio" name="411" value="250"><b>Середній</b> 
+					
+							</td>
+							<td>
+								<input type="radio" name="411" value="750" checked><b>Високий</b>	
+							</td>
+						</tr>
+						<tr>
+							<td>
+								>5
+							</td>
+							<td>
+								<input type="radio" name="411" value="100"><b>Середній</b>
+							</td>
+							<td>
+								<input type="radio" name="411" value="375"><b>Високий</b> 
+					
+							</td>
+							<td>
+								<input type="radio" name="411" value="750" checked><b>Високий</b>	
+							</td>
+						</tr>
+						
+					</table>
+					<p><b>Зовнішні інтерфейсні файли:</b></p>
+					<hr>
+					<table border="1" width="100%" cellpadding="10">
+						<tr>
+							<td>
+								Посилання на файли
+							</td>
+							<td>
+								1-19
+							</td>
+							<td>
+								20-50
+							</td>
+							<td>
+								>50
+							</td>
+						</tr>
+						<tr>
+							<td>
+								1
+							</td>
+							<td>
+								<input type="radio" name="511" value="50"><b>Низький</b>
+							</td>
+							<td>
+								<input type="radio" name="511" value="125"><b>Низький</b> 
+				
+							</td>
+							<td>
+								<input type="radio" name="511" value="350" checked><b>Середній</b>	
+							</td>
+						</tr>
+						<tr>
+							<td>
+								2-5
+							</td>
+							<td>
+								<input type="radio" name="511" value="50"><b>Низький</b>
+							</td>
+							<td>
+								<input type="radio" name="511" value="175"><b>Середній</b> 
+					
+							</td>
+							<td>
+								<input type="radio" name="511" value="500" checked><b>Високий</b>	
+							</td>
+						</tr>
+						<tr>
+							<td>
+								>5
+							</td>
+							<td>
+								<input type="radio" name="511" value="70"><b>Середній</b>
+							</td>
+							<td>
+								<input type="radio" name="511" value="250"><b>Високий</b> 
+					
+							</td>
+							<td>
+								<input type="radio" name="511" value="500" checked><b>Високий</b>	
+							</td>
+						</tr>
+						
+					</table>
+					
+					
+
+
+					<p><b>Source Line of Code:</b></p>
+					<span id="nullLOC"></span>
+					<input type="text" id="LOC">
+					<button class="button" onclick="calculateFunctionalPoints()">Calculate</button><br>
+				</td>
+			</tr>
+			<tr>
+				<td >
+
+					<b>Крок 1. Підрахунок кількість функцій в кожній категорії</b><br>
+					<br>
+
+					<b>Крок 2. Застосування вагових коефіцієнтів складності</b><br>
+					<span  id= "result">N*k:</span><span class="formula" id="formula2" ></span><br>
+
+					<b>Крок 3.Фактори середовища</b><br>
+					<span  id= "result">Factors: </span><span class="formula" id="formula3" ></span><br>
+
+					<b>Крок 4. Обчислення корегуючого множника складності (CAF)</b><br>
+					<span  id= "result">CAF=0,65+(0,01*N): </span><span class="formula" id="formula4" ></span><br>
+
+					<b>Крок 5. Обчислення cкорегованих функціональних точок (AFP)</b><br>
+					<span  id= "result">AFP=FP*CAF: </span><span class="formula" id="formula5" ></span><br>
+
+					<b>Крок 6. Перетворення рядка LOC (додатково)</b><br>
+					<span  id= "result">V=AFP*LOC: </span><span class="formula" id="formula6" ></span><br>
+
+					<b>Крок 7.Обчислення трудовитрат T,де P=KSLOC=V/1000</b><br>
+					<span id= "result">T=a*Pb: </span><span class="formula" id="formula7" ></span><br>
+
+				</td>
+			</tr>
+			<tr>
+				<td>
+				
+						<b> Acronyms used below:</b>
+						<br>
+							  <b>0</b>:означає неможливість застосування ;
+							  <b> 1</b>:вплив випадковий;
+							  <b> 2 </b>:незначний ;
+							  <b>3 </b>:вплив середній;
+							  <b>4 </b>:значний;
+							  <b>5 </b>:вплив основний;<br>
+
+				</td>
+			</tr>
+			<tr>
+				<td >
+					<b>Опис факторів середовища</b><br>
+					<hr>
+					<input type="radio" name="11" value="0"><b>0</b>
+					<input type="radio" name="11" value="1"><b>1</b> 
+					<input type="radio" name="11" value="2" checked><b>2</b>
+					<input type="radio" name="11" value="3"><b>3</b>
+					<input type="radio" name="11" value="4"><b>4</b>
+					<input type="radio" name="11" value="5"><b>5</b>
+					<span  id="point" ><b>1.Обмін даними</b></span><br>
+
+					<input type="radio" name="12" value="0"><b>0</b>
+					<input type="radio" name="12" value="1"><b>1</b> 
+					<input type="radio" name="12" value="2" checked><b>2</b>
+					<input type="radio" name="12" value="3"><b>3</b>
+					<input type="radio" name="12" value="4"><b>4</b>
+					<input type="radio" name="12" value="5"><b>5</b>
+					<span  id="point" ><b>2.Розподілені обчислення</b></span><br>
+
+					<input type="radio" name="13" value="0"><b>0</b>
+					<input type="radio" name="13" value="1"><b>1</b> 
+					<input type="radio" name="13" value="2" checked><b>2</b>
+					<input type="radio" name="13" value="3"><b>3</b>
+					<input type="radio" name="13" value="4"><b>4</b>
+					<input type="radio" name="13" value="5"><b>5 </b>
+					<span  id="point" ><b>3.Вимоги до продуктивності</b></span><br>
+
+					<input type="radio" name="14" value="0"><b>0</b>
+					<input type="radio" name="14" value="1"><b>1</b> 
+					<input type="radio" name="14" value="2" checked><b>2</b>
+					<input type="radio" name="14" value="3"><b>3</b>
+					<input type="radio" name="14" value="4"><b>4</b>
+					<input type="radio" name="14" value="5"><b>5</b>
+					<span  id="point" ><b>4.Конфігурація з обмеженням</b></span><br>
+
+					<input type="radio" name="15" value="0"><b>0</b>
+					<input type="radio" name="15" value="1"><b>1</b> 
+					<input type="radio" name="15" value="2" checked><b>2</b>
+					<input type="radio" name="15" value="3"><b>3</b>
+					<input type="radio" name="15" value="4"><b>4</b>
+					<input type="radio" name="15" value="5"><b>5</b>
+					<span  id="point" ><b>5.Частота транзакцій</b></span><br>
+
+					<input type="radio" name="16" value="0"><b>0</b>
+					<input type="radio" name="16" value="1"><b>1</b>
+					<input type="radio" name="16" value="2"><b>2</b> 
+					<input type="radio" name="16" value="3" checked><b>3</b>
+					<input type="radio" name="16" value="4"><b>4</b>
+					<input type="radio" name="16" value="5"><b>5</b>
+					<span  id="point" ><b>6.Інтерактивний запит</b></span><br>
+
+					<input type="radio" name="17" value="0"><b>0</b>
+					<input type="radio" name="17" value="1"><b>1</b>
+					<input type="radio" name="17" value="2"><b>2</b> 
+					<input type="radio" name="17" value="3" checked><b>3</b>
+					<input type="radio" name="17" value="4"><b>4</b>
+					<input type="radio" name="17" value="5"><b>5</b>
+					<span  id="point" ><b>7.Ефективність на рівні кінцевого користувача</b></span><br>
+
+					<input type="radio" name="18" value="0"><b>0</b>
+					<input type="radio" name="18" value="1"><b>1</b>
+					<input type="radio" name="18" value="2"><b>2</b> 
+					<input type="radio" name="18" value="3" checked><b>3</b>
+					<input type="radio" name="18" value="4"><b>4</b>
+					<input type="radio" name="18" value="5"><b>5</b>
+					<span  id="point" ><b>8.Інтерактивне оновлення</b></span><br>
+
+					<input type="radio" name="19" value="0"><b>0</b>
+					<input type="radio" name="19" value="1"><b>1</b>
+					<input type="radio" name="19" value="2"><b>2</b> 
+					<input type="radio" name="19" value="3" checked><b>3</b>
+					<input type="radio" name="19" value="4"><b>4</b>
+					<input type="radio" name="19" value="5"><b>5</b>
+					<span  id="point" ><b>9.Складна обробка</b></span><br>
+
+					<input type="radio" name="20" value="0"><b>0</b>
+					<input type="radio" name="20" value="1"><b>1</b>
+					<input type="radio" name="20" value="2"><b>2</b> 
+					<input type="radio" name="20" value="3" checked><b>3</b>
+					<input type="radio" name="20" value="4"><b>4</b>
+					<input type="radio" name="20" value="5"><b>5</b>
+					<span  id="point" ><b>10.Повторне використання</b></span><br>
+
+					<input type="radio" name="21" value="0"><b>0</b>
+					<input type="radio" name="21" value="1"><b>1</b>
+					<input type="radio" name="21" value="2"><b>2</b> 
+					<input type="radio" name="21" value="3" checked><b>3</b>
+					<input type="radio" name="21" value="4"><b>4</b>
+					<input type="radio" name="21" value="5"><b>5</b>
+					<span  id="point" ><b>11.спрощене перетворення</b></span><br>
+
+					<input type="radio" name="22" value="0"><b>0</b>
+					<input type="radio" name="22" value="1"><b>1</b>
+					<input type="radio" name="22" value="2"><b>2</b> 
+					<input type="radio" name="22" value="3" checked><b>3</b>
+					<input type="radio" name="22" value="4"><b>4</b>
+					<input type="radio" name="22" value="5"><b>5</b>
+					<span  id="point" ><b>12.Спрощення операції</b></span><br>
+
+					<input type="radio" name="23" value="0"><b>0</b>
+					<input type="radio" name="23" value="1"><b>1</b> 
+					<input type="radio" name="23" value="2" checked><b>2</b>
+					<input type="radio" name="23" value="3"><b>3</b>
+					<input type="radio" name="23" value="4"><b>4</b>
+					<input type="radio" name="23" value="5"><b>5</b>
+					<span  id="point" ><b>13.Використання більше як декількох вузлів</b></span><br>
+
+					<input type="radio" name="24" value="0"><b>0</b>
+					<input type="radio" name="24" value="1"><b>1</b> 
+					<input type="radio" name="24" value="2" checked><b>2</b>
+					<input type="radio" name="24" value="3"><b>3</b>
+					<input type="radio" name="24" value="4"><b>4</b>
+					<input type="radio" name="24" value="5"><b>5</b>
+					<span  id="point" ><b>14.Потенціал зміни функції</b></span><br>
+
+					
+				</td>
+			</tr>
+			<tr id="early_design">
+				<td >
+					<b>Early Design</b><br>
+					<hr>
+					
+				</td>
+			</tr>
+			
+		</table>
+		
+	</div>
+</body>
+</html>

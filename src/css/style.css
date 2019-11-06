@@ -5,8 +5,8 @@ table{
 
 div{
 	background: white;
-	opacity: 50%;
 	}
+  
 body{
 	background: grey;
 	opacity: 80%
@@ -31,7 +31,7 @@ hr {
   margin-left: 300px;
 }
 
-#formula{
+.formula{
   color: red ; 
   font-size: 32px;
 }
@@ -46,7 +46,7 @@ hr {
   background-color: green; 
   border: 1px black;
   color: white;
-  margin-left: 1050px;
+  margin-left: 1150px;
   margin-right: 10px;
   padding: 15px 32px;
   text-align: center;
@@ -90,3 +90,9 @@ a {
 #post_architecture{
   display: none;
 }
+
+
+
+//function points
+
+
